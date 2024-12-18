@@ -1,0 +1,6 @@
+cd "H:\Мой диск\Assets"
+Get-ChildItem -Recurse -File | Where-Object { $_.Length -gt 10MB } | ForEach-Object { Write-Host "Файл превышает 10MB:" $_.FullName }
+Get-ChildItem -Recurse -File | Where-Object { $_.Length -le 10MB } | ForEach-Object { git add $_.FullName }
+git commit -m "Manual sync - $(Get-Date)"
+git add --all
+git push origin main
