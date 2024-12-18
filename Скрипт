@@ -1,0 +1,40 @@
+import bpy
+from mathutils import Vector
+
+def align_object_to_center():
+    # Получаем активную сцену и все объекты в ней
+    objects = bpy.context.scene.objects
+    
+    # Проверяем, есть ли хотя бы один объект
+    if not objects:
+        print("В сцене нет объектов.")
+        return
+
+    # Берем первый объект (предполагаем, что он единственный)
+    obj = objects[0]
+    print(f"Обрабатывается объект: {obj.name}")
+
+    # Переходим в Object Mode (на случай, если объект в режиме редактирования)
+    if bpy.ops.object.mode_set.poll():
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+    # Устанавливаем Origin объекта в центр геометрии
+    bpy.context.view_layer.objects.active = obj  # Устанавливаем объект активным
+    bpy.ops.object.origin_set(type='ORIGIN_CENTER_OF_VOLUME', center='BOUNDS')  # Origin в центр геометрии
+
+    # Вычисляем мировые границы объекта
+    bbox = [obj.matrix_world @ Vector(corner) for corner in obj.bound_box]
+    
+    # Определяем минимальную координату по Z
+    min_z = min(v[2] for v in bbox)
+
+    # Устанавливаем объект в центр сцены по X, Y и выравниваем основание на Z = 0
+    obj.location.x = 0
+    obj.location.y = 0
+    obj.location.z -= min_z  # Смещаем объект вниз до Z = 0
+
+    print(f"Объект '{obj.name}' перемещен в центр сцены и установлен на стол (Z=0).")
+    return
+
+# Вызываем функцию
+align_object_to_center()
