@@ -1,22 +1,11 @@
-# Путь к папке репозитория
-$repoPath = "H:\Мой диск\Assets"
+$path = "H:\Мой диск\Assets"
+cd $path
 
-# Сообщение для коммита с текущей датой и временем
-$commitMessage = "Auto-sync updates - $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")"
+# Добавляем все изменения, включая удаление
+git add --all
 
-# Переход в папку репозитория
-Set-Location -Path $repoPath
+# Коммитим изменения
+git commit -m "Sync updates - $(Get-Date)"
 
-# Проверка изменений и добавление только изменённых файлов
-git add .
-
-# Проверка, есть ли изменения
-if (git status --porcelain) {
-    # Создание коммита
-    git commit -m $commitMessage
-
-    # Пуш изменений в удалённый репозиторий
-    git push origin main
-} else {
-    Write-Host "No changes to commit."
-}
+# Принудительно пушим в репозиторий
+git push --force origin main
