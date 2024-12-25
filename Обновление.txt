@@ -1,6 +1,19 @@
 cd "H:\Мой диск\Assets"
+
+# Удаляем файлы, которые были удалены в локальной папке
+git ls-files --deleted | ForEach-Object { git rm $_ }
+
+# Обработка файлов, превышающих 10MB
 Get-ChildItem -Recurse -File | Where-Object { $_.Length -gt 10MB } | ForEach-Object { Write-Host "Файл превышает 10MB:" $_.FullName }
+
+# Добавляем файлы, которые меньше или равны 10MB
 Get-ChildItem -Recurse -File | Where-Object { $_.Length -le 10MB } | ForEach-Object { git add $_.FullName }
+
+# Коммит изменений
 git commit -m "Manual sync - $(Get-Date)"
+
+# Добавляем оставшиеся изменения и удаленные файлы
 git add --all
+
+# Отправляем изменения в удаленный репозиторий
 git push origin main
