@@ -3,7 +3,7 @@
     "show": true,
     "default": "horizontal",
     "modes": [
-      { "value": "vertical", "enabled": true },
+      { "value": "vertical", "enabled": false },
       { "value": "horizontal", "enabled": true },
       { "value": "verticalOffsetOneThird", "enabled": false },
       { "value": "verticalOffsetHalf", "enabled": false },
@@ -15,7 +15,7 @@
   },
   "group2": {
     "show": true,
-    "default": "updateAllColor",
+    "default": "null",
     "modes": [
       { "value": "randomColors", "enabled": false },
       { "value": "colorsJitter", "enabled": false },
@@ -23,19 +23,19 @@
     ]
   },
   "group3": {
-    "show": false,
+    "show": true,
     "default": "sequentialFormFactor",
     "modes": [
       { "value": "randomFormFactor", "enabled": false },
-      { "value": "sequentialFormFactor", "enabled": false }
+      { "value": "sequentialFormFactor", "enabled": true }
     ]
   },
   "group4": {
-    "show": false,
+    "show": true,
     "default": null,
     "modes": [
-      { "value": "rotate90", "enabled": false },
-      { "value": "rotate180", "enabled": false },
+      { "value": "rotate90", "enabled": true },
+      { "value": "rotate180", "enabled": true },
       { "value": "rotateVerticalSymmetry", "enabled": false },
       { "value": "rotateHorizontalSymmetry", "enabled": false }
     ]
