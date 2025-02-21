@@ -34,8 +34,8 @@
     "show": false,
     "default": null,
     "modes": [
-      { "value": "rotate90", "enabled": true },
-      { "value": "rotate180", "enabled": true },
+      { "value": "rotate90", "enabled": false },
+      { "value": "rotate180", "enabled": false },
       { "value": "rotateVerticalSymmetry", "enabled": false },
       { "value": "rotateHorizontalSymmetry", "enabled": false }
     ]
