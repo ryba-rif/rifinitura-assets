@@ -1,0 +1,43 @@
+{
+  "group1": {
+    "show": true,
+    "default": "horizontal",
+    "modes": [
+      { "value": "vertical", "enabled": true },
+      { "value": "horizontal", "enabled": true },
+      { "value": "verticalOffsetOneThird", "enabled": true },
+      { "value": "verticalOffsetHalf", "enabled": true },
+      { "value": "horizontalRandomOffset", "enabled": true },
+      { "value": "herringbone", "enabled": true },
+      { "value": "spiral", "enabled": true },
+      { "value": "parquetStaggered", "enabled": false }
+    ]
+  },
+  "group2": {
+    "show": true,
+    "default": "randomColors",
+    "modes": [
+      { "value": "randomColors", "enabled": true },
+      { "value": "colorsJitter", "enabled": true },
+      { "value": "updateAllColor", "enabled": true }
+    ]
+  },
+  "group3": {
+    "show": true,
+    "default": "sequentialFormFactor",
+    "modes": [
+      { "value": "randomFormFactor", "enabled": true },
+      { "value": "sequentialFormFactor", "enabled": true }
+    ]
+  },
+  "group4": {
+    "show": false,
+    "default": null,
+    "modes": [
+      { "value": "rotate90", "enabled": false },
+      { "value": "rotate180", "enabled": false },
+      { "value": "rotateVerticalSymmetry", "enabled": false },
+      { "value": "rotateHorizontalSymmetry", "enabled": false }
+    ]
+  }
+}
