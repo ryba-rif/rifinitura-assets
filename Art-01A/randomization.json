@@ -31,7 +31,7 @@
     ]
   },
   "group4": {
-    "show": true,
+    "show": false,
     "default": null,
     "modes": [
       { "value": "rotate90", "enabled": true },
