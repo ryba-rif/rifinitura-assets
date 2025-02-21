@@ -15,7 +15,7 @@
   },
   "group2": {
     "show": true,
-    "default": "null",
+    "default": "updateAllColor",
     "modes": [
       { "value": "randomColors", "enabled": false },
       { "value": "colorsJitter", "enabled": false },
