@@ -1,43 +1,55 @@
 {
-  "group1": {
-    "show": true,
-    "default": "horizontal",
-    "modes": [
-      { "value": "vertical", "enabled": false },
-      { "value": "horizontal", "enabled": true },
-      { "value": "verticalOffsetOneThird", "enabled": false },
-      { "value": "verticalOffsetHalf", "enabled": false },
-      { "value": "horizontalRandomOffset", "enabled": false },
-      { "value": "herringbone", "enabled": false },
-      { "value": "spiral", "enabled": false },
-      { "value": "parquetStaggered", "enabled": false }
-    ]
+  "ui": {
+    "enableDoor": true,
+    "enableWindow": true
   },
-  "group2": {
-    "show": true,
-    "default": "updateAllColor",
-    "modes": [
-      { "value": "randomColors", "enabled": false },
-      { "value": "colorsJitter", "enabled": false },
-      { "value": "updateAllColor", "enabled": true }
-    ]
-  },
-  "group3": {
-    "show": true,
-    "default": "sequentialFormFactor",
-    "modes": [
-      { "value": "randomFormFactor", "enabled": false },
-      { "value": "sequentialFormFactor", "enabled": true }
-    ]
-  },
-  "group4": {
-    "show": false,
-    "default": null,
-    "modes": [
-      { "value": "rotate90", "enabled": false },
-      { "value": "rotate180", "enabled": false },
-      { "value": "rotateVerticalSymmetry", "enabled": false },
-      { "value": "rotateHorizontalSymmetry", "enabled": false }
-    ]
-  }
+  "groups": [
+    {
+      "visible": true,
+      "type": "radio",
+      "options": [
+        { "label": "Обновить цвет", "value": "updateAllColor", "visible": true },
+        { "label": "Случайные цвета", "value": "randomColors", "visible": true },
+        { "label": "Цвета с джиттером", "value": "colorsJitter", "visible": true }
+      ]
+    },
+    {
+      "visible": true,
+      "type": "radio",
+      "options": [
+        { "label": "Вертикальная", "value": "vertical", "visible": true },
+        { "label": "Горизонтальная", "value": "horizontal", "visible": true },
+        { "label": "Сдвиг 1/3", "value": "verticalOffsetOneThird", "visible": true },
+        { "label": "Сдвиг 1/2", "value": "verticalOffsetHalf", "visible": true },
+        { "label": "Горизонтальный с офсетом", "value": "horizontalRandomOffset", "visible": true },
+        { "label": "Шеврон", "value": "herringbone", "visible": true },
+        { "label": "Спираль", "value": "spiral", "visible": true },
+        { "label": "Паркет", "value": "parquetStaggered", "visible": true }
+      ]
+    },
+    {
+      "visible": true,
+      "type": "radio",
+      "options": [
+        { "label": "Поворот 90°", "value": "rotate90", "visible": true },
+        { "label": "Поворот 180°", "value": "rotate180", "visible": true }
+      ]
+    },
+    {
+      "visible": true,
+      "type": "checkbox",
+      "options": [
+        { "label": "Вертикальная симметрия", "value": "rotateVerticalSymmetry", "visible": true },
+        { "label": "Горизонтальная симметрия", "value": "rotateHorizontalSymmetry", "visible": true }
+      ]
+    },
+    {
+      "visible": true,
+      "type": "radio",
+      "options": [
+        { "label": "Случайный форм-фактор", "value": "randomFormFactor", "visible": true },
+        { "label": "Последовательный форм-фактор", "value": "sequentialFormFactor", "visible": true }
+      ]
+    }
+  ]
 }
