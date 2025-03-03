@@ -1,0 +1,60 @@
+{
+  "ui": {
+    "enableDoor": false,
+    "enableWindow": false
+  },
+  "groups": [
+    {
+      "name": "Цветовые настройки",
+      "visible": true,
+      "type": "radio",
+      "options": [
+        { "label": "Обновить цвет", "value": "updateAllColor", "visible": true },
+        { "label": "Случайные цвета", "value": "randomColors", "visible": false },
+        { "label": "Цвета с джиттером", "value": "colorsJitter", "visible": false }
+      ]
+    },
+    {
+      "name": "Ориентация и смещение",
+      "visible": true,
+      "type": "radio",
+      "options": [
+        { "label": "Вертикальная", "value": "vertical", "visible": false },
+        { "label": "Горизонтальная", "value": "horizontal", "visible": true },
+        { "label": "Сдвиг 1/3", "value": "verticalOffsetOneThird", "visible": false },
+        { "label": "Сдвиг 1/2", "value": "verticalOffsetHalf", "visible": false },
+        { "label": "Горизонтальный с офсетом", "value": "horizontalRandomOffset", "visible": false },
+        { "label": "Шеврон", "value": "herringbone", "visible": false },
+        { "label": "Спираль", "value": "spiral", "visible": false },
+        { "label": "Паркет", "value": "parquetStaggered", "visible": false }
+      ]
+    },
+    {
+      "name": "Поворот",
+      "visible": true,
+      "type": "radio",
+      "options": [
+        { "label": "Поворот 90°", "value": "rotate90", "visible": true },
+        { "label": "Поворот 180°", "value": "rotate180", "visible": true }
+      ]
+    },
+    {
+      "name": "Симметрия",
+      "visible": false,
+      "type": "checkbox",
+      "options": [
+        { "label": "Вертикальная симметрия", "value": "rotateVerticalSymmetry", "visible": true },
+        { "label": "Горизонтальная симметрия", "value": "rotateHorizontalSymmetry", "visible": true }
+      ]
+    },
+    {
+      "name": "Форм-фактор",
+      "visible": false,
+      "type": "radio",
+      "options": [
+        { "label": "Случайный форм-фактор", "value": "randomFormFactor", "visible": false },
+        { "label": "Последовательный форм-фактор", "value": "sequentialFormFactor", "visible": true }
+      ]
+    }
+  ]
+}

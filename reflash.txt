@@ -1,0 +1,35 @@
+# 1. Переходим в рабочую директорию
+cd "H:\Мой диск\Assets"
+
+# 2. Выводим список файлов, превышающих 5MB (они не будут синхронизированы)
+Get-ChildItem -Recurse -File | Where-Object { $_.Length -gt 5MB } | ForEach-Object {
+    Write-Host "Файл превышает 5MB и не будет синхронизирован:" $_.FullName
+}
+
+# 3. Создаём новый orphan-бранч, который не имеет предыдущей истории
+git checkout --orphan temp_branch
+
+# 4. Очищаем индекс (удаляем всё, что было проиндексировано)
+git rm -rf --cached .
+
+# 5. Добавляем все файлы из рабочей директории
+git add --all
+
+# 6. Удаляем из индекса файлы, размер которых превышает 5MB
+Get-ChildItem -Recurse -File | Where-Object { $_.Length -gt 5MB } | ForEach-Object {
+    # Получаем относительный путь файла
+    $relativePath = $_.FullName.Substring((Get-Location).Path.Length + 1)
+    git rm --cached "$relativePath"
+}
+
+# 7. Фиксируем изменения одним коммитом, отражающим текущее состояние папки
+git commit -m "Update repository state - $(Get-Date)"
+
+# 8. Удаляем старую ветку main
+git branch -D main
+
+# 9. Переименовываем текущий orphan-бранч в main
+git branch -m main
+
+# 10. Принудительно отправляем изменения в удалённый репозиторий (перезаписываем всю историю)
+git push --force origin main
